@@ -1,0 +1,5 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text
+perkLightArmorRank5Desc,progression,perk Agi,,,Artisan
+perkLightArmorRank5LongDesc,progression,perk Agi,,,Nobody knows how but you know how to reinforce leathers as no one has ever done it before. Your mastercraft skills are unique and now you can craft tier 6 light armor.
+perkHeavyArmorRank5Desc,progression,perk Str,,,Juggernaut
+perkHeavyArmorRank5LongDesc,progression,perk Str,,,You know the recipie for the perfect defense: weld plate and scrap together and repeat. You can craft the toughest of armors and for that you can now craft tier 6 heavy armor.

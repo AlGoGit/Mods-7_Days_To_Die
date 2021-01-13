@@ -1,0 +1,30 @@
+<configs>
+	<!-- Add 5th level to Heavy Armor Perk -->
+	<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@max_level">5</set>
+	<append xpath="/progression/perks/perk[@name='perkHeavyArmor']">
+			<level_requirements level="5">
+				<requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10" desc_key="reqAgilityLevel10"/>
+			</level_requirements>
+		
+			<effect_group>
+				<effect_description level="5" desc_key="perkHeavyArmorRank5Desc" long_desc_key="perkHeavyArmorRank5LongDesc"/>
+			</effect_group>
+    </append>
+	<!-- Add 5th level to Light Armor Perk -->
+	<set xpath="/progression/perks/perk[@name='perkLightArmor']/@max_level">5</set>
+	<append xpath="/progression/perks/perk[@name='perkLightArmor']">
+			<level_requirements level="5">
+				<requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10" desc_key="reqAgilityLevel10"/>
+			</level_requirements>
+		
+			<effect_group>
+				<effect_description level="5" desc_key="perkLightArmorRank5Desc" long_desc_key="perkLightArmorRank5LongDesc"/>
+			</effect_group>
+    </append>
+	<!-- Set Crafting Tiers up to level 6 -->
+	<set xpath="/progression/perks/perk[@name='perkLightArmor']/effect_group/passive_effect[@name='CraftingTier']/@level">1,2,3,4,5</set>
+	<set xpath="/progression/perks/perk[@name='perkLightArmor']/effect_group/passive_effect[@name='CraftingTier']/@value">1,2,3,4,5</set>
+	<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/effect_group/passive_effect[@name='CraftingTier']/@level">1,2,3,4,5</set>
+	<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/effect_group/passive_effect[@name='CraftingTier']/@value">1,2,3,4,5</set>
+	
+</configs>
