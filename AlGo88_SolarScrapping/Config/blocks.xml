@@ -1,0 +1,5 @@
+<AlGo88_SolarScrapping>
+    <append xpath="/blocks/block[@name='cntCollapsedSolarbank']">
+		<drop event="Harvest" name="solarCell" count="1,2" prob=".15" tag="salvageHarvest"/>
+    </append>
+</AlGo88_SolarScrapping>

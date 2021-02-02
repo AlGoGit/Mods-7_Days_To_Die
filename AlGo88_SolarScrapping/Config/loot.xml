@@ -1,0 +1,10 @@
+<configs>
+<!-- Add loot on Working Stiff Box -->	
+	<remove xpath="/lootcontainers/lootcontainer[@id='53']"></remove>
+	<append xpath="/lootcontainers">
+		<lootcontainer id="53" count="1" size="6,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate">
+			<item group="workingStiffsBox"/>
+			<item name="solarbank" prob=".1"/>
+		</lootcontainer>
+	</append>
+</configs>

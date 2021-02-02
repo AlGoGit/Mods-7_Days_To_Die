@@ -3,7 +3,7 @@
 	<set xpath="/progression/perks/perk[@name='perkHeavyArmor']/@max_level">5</set>
 	<append xpath="/progression/perks/perk[@name='perkHeavyArmor']">
 			<level_requirements level="5">
-				<requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10" desc_key="reqAgilityLevel10"/>
+				<requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10" desc_key="reqStrengthLevel10"/>
 			</level_requirements>
 		
 			<effect_group>

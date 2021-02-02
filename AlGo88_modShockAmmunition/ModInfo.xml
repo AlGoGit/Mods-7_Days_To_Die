@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="AlGo88_modShockAmmunition" />
+		<Description value="Adds a chance to shock enemies." />
+		<Author value="AlGo88"/>
+		<Version value="A19_1.0" />
+		<Website value="https://github.com/AlGoGit/Mods-7_Days_To_Die" />
+	</ModInfo>
+</xml>

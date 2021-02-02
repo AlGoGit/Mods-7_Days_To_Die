@@ -1,0 +1,5 @@
+Key,Source,Context,Changes,English
+
+modShockAmmunition,items,Item,KgNone,Shocking Ammunition Mod,
+
+modShockAmmunitionDesc,items,weapons,New,Adds a chance to stun target.,
