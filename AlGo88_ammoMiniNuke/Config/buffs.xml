@@ -1,0 +1,29 @@
+<configs>
+	<append xpath="/buffs">
+		
+		<buff name="buffFatKidRadiation" icon="ui_game_symbol_radiation" icon_color="0,180,0">
+			<damage_type value="radiation"/>
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffFatKidRadiationDuration" operation="LTE" value="30"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="set" value="30"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="set" value="30"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,30" value="1,1"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="10,30" value="1,1"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Radiation" intensity=".6" fade="2"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFatKidRadiation">
+					<requirement name="CVarCompare" cvar="$buffFatKidRadiationDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Radiation" intensity="0" fade="0"/>
+			</effect_group>
+		</buff>
+	
+	</append> 
+ </configs>

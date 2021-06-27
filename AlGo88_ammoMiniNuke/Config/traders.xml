@@ -1,0 +1,6 @@
+<configs>
+	<append xpath="/traders/trader_item_groups/trader_item_group[@name='modAllT5SecretStash']">	
+		<item name="ammoMiniNuke" count="1" prob=".2"/>
+		<item name="gunBigDaddyLauncherSchematic" count="1" prob=".2"/>
+	</append>
+</configs>
