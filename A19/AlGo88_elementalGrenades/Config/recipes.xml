@@ -1,0 +1,19 @@
+<Config>
+
+
+<append xpath="/recipes">
+
+
+	<recipe name="gunBigDaddyLauncher" count="1" craft_time="4800" craft_area="workbench" tags="learnable,workbenchCrafting" >
+		<ingredient name="resourceGoldNugget" count="100"/>
+		<ingredient name="resourceForgedSteel" count="1000"/>
+		<ingredient name="resourceMechanicalParts" count="500"/>
+		<ingredient name="resourceRepairKit" count="100"/>
+		<ingredient name="gunExplosivesT3RocketLauncher" count="1"/>
+	</recipe>
+	</append>
+	
+</Config>
+
+	
+	

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Trader_Refresh_1Day" />
+		<Description value="Set all traders to refresh each day" />
+		<Author value="ShoudenKalferas-Edited by AlGo88"/>
+		<Version value="A20_1.0" />
+		<Website value="https://github.com/XelaNull/7dtd-Modlets.git" />
+	</ModInfo>
+</xml>

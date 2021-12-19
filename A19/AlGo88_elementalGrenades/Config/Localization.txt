@@ -1,0 +1,7 @@
+Key,Source,Context,Changes,English
+
+thrownElementalPipeFreeze,items,Item,KgNone,Freezing Pipebomb,
+
+thrownElementalPipeFreezeDesc,items,weapons,New,A spine chilling explosion!,
+
+

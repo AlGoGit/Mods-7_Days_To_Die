@@ -1,0 +1,149 @@
+<configs>
+	<append xpath="/lootcontainers">	
+		<!-- Cowboy corpse loot -->
+		<lootgroup name="lootBagCowboy">
+			<item name="apparelCoatLeatherPoncho" prob=".1"/>
+			<item name="apparelCowboyHat" prob=".1"/>
+			<item name="apparelCowboyBoots" prob=".1"/>
+			<item name="apparelCigarette" prob=".01"/>
+			
+			<item name="gunRifleT1HuntingRifle" prob=".05"/>
+			<item name="gunShotgunT1DoubleBarrel" count=".05"/>
+			<item name="gunHandgunT2Magnum44" count=".01"/>
+			<item name="thrownDynamite" count="1,3" prob=".1"/>
+			
+			<item name="ammo762mmBulletBall" count="5,20" prob="1"/>
+			<item name="ammoShotgunShell" count="4,16" prob="1"/>
+			<item name="ammo44MagnumBulletBall" count="2,12" prob="1"/>
+			
+			<item name="resourceBulletCasing" count="3,10" prob=".18"/>
+		</lootgroup>
+		
+		<!-- Gangster/Hitman corpse loot -->
+		<lootgroup name="lootBagGangsterHitman">
+			<item name="apparelSuitJacket" prob=".09"/>
+			<item name="apparelSuitPants" prob=".09"/>
+			<item name="apparelSuitDressShoes" prob=".09"/>
+			<item name="apparelLongShirt" prob=".09"/>
+			<item name="apparelCigarette" prob=".01"/>
+			
+			<item name="meleeWpnKnucklesT1IronKnuckles" prob=".15"/>
+			<item name="gunHandgunT1Pistol"  prob=".05"/>
+			<item name="gunHandgunT3SMG5"  prob="0.04"/>
+			<item name="gunHandgunT3DesertVulture" count=".01"/>
+			
+			<item name="ammo9mmBulletBall" count="6,20" prob=".1"/>
+			<item name="ammo44MagnumBulletBall" count="2,12" prob=".1"/>
+			
+			<item name="resourceBulletCasing" count="3,10" prob=".155"/>
+		</lootgroup>
+		
+		<!-- Hazmat corpse loot -->
+		<lootgroup name="lootBagHazmatOperator">
+			<item name="apparelHazmatMask" prob=".09"/>
+			<item name="apparelHazmatJacket" prob=".09"/>
+			<item name="apparelHazmatGloves" prob=".09"/>
+			<item name="apparelHazmatPants" prob=".09"/>
+			<item name="apparelHazmatBoots" prob=".09"/>
+			<item name="apparelNerdGlasses" prob=".02"/>
+			
+			<item name="meleeWpnBatonT2StunBaton" prob=".04"/>
+			<item name="gunHandgunT1Pistol"  prob=".05"/>
+			<item name="gunHandgunT3SMG5"  prob=".01"/>
+			<item name="gunBotT2JunkTurret" count=".02"/>
+			
+			<item name="ammo9mmBulletBall" count="6,20" prob=".15"/>
+			<item name="ammoJunkTurretRegular" count="20,80" prob=".15"/>
+			
+			<item name="resourceBulletCasing" count="3,10" prob=".12"/>
+		</lootgroup>
+		
+		<!-- Sniper/Hunter corpse loot -->
+		<lootgroup name="lootBagSniperHunter">
+			<item name="apparelGhillieSuitHood" prob=".09"/>
+			<item name="apparelGhillieSuitJacket" prob=".09"/>
+			<item name="apparelGhillieSuitPants" prob=".09"/>
+			<item name="apparelShades" prob=".029"/>
+			
+			<item name="gunBowT3CompoundBow" prob=".03"/>
+			<item name="gunBowT3CompoundCrossbow" prob=".03"/>
+			<item name="gunRifleT1HuntingRifle" prob=".04"/>
+			<item name="gunRifleT2LeverActionRifle" prob=".01"/>
+			<item name="gunRifleT3SniperRifle" prob=".01"/>
+			
+			<item name="ammoArrowIron" count="6,15" prob=".1"/>
+			<item name="ammoArrowSteelAP" count="3,10" prob=".05"/>
+			<item name="ammoCrossbowBoltIron" count="6,15" prob=".1"/>
+			<item name="ammoCrossbowBoltSteelAP" count="3,10" prob=".05"/>
+			<item name="ammo762mmBulletBall" count="5,20" prob=".1"/>
+			
+			<item name="resourceBulletCasing" count="3,10" prob=".18"/>
+		</lootgroup>
+		
+		<!-- Soldier corpse loot -->
+		<lootgroup name="lootBagSoldier">
+			<item name="apparelArmyShirt" prob=".099"/>
+			<item name="apparelArmyPants" prob=".099"/>
+			
+			<item name="gunShotgunT2PumpShotgun" count=".05"/>
+			<item name="gunHandgunT1Pistol"  prob=".05"/>
+			<item name="gunHandgunT3SMG5"  prob=".01"/>
+			<item name="gunMGT2TacticalAR"   prob=".01"/>
+			<item name="thrownGrenadeContact" count="1,3" prob=".1"/>
+			<item name="thrownGrenade" count="1,3" prob=".1"/>
+			
+			<item name="ammoShotgunShell" count="4,16" prob=".1"/>
+			<item name="ammo9mmBulletBall" count="6,20" prob=".1"/>
+			<item name="ammo762mmBulletBall" count="5,20" prob=".1"/>
+			
+			<item name="resourceBulletCasing" count="3,10" prob=".18"/>
+		</lootgroup>
+		
+		<!-- CONTAINERS MUST BE DEFINED AFTER GROUPS -->
+		
+		<!-- Single Body Bag Loot -->
+		<lootcontainer id="263" name="lootOfBodyBagsSingle" count="1,2" size="6,3" destroy_on_close="false" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="qualBaseTemplate">
+			<item name="foodRottingFlesh" count="2,20" prob=".2"/>
+			<item name="resourceAnimalFat" count="5,15" prob=".1"/>
+			<item name="resourceBone" count="2,10" prob=".2"/>
+			
+			<item name="oldCash" count="2,10" prob=".25"/>
+			
+			<item group="lootBagCowboy" prob=".05"/>
+			<item group="lootBagGangsterHitman" prob=".05"/>
+			<item group="lootBagHazmatOperator" prob=".05"/>
+			<item group="lootBagSniperHunter" prob=".05"/>
+			<item group="lootBagSoldier" prob=".05"/>
+		</lootcontainer>
+		
+		<!-- Pair of Body Bag Loot -->
+		<lootcontainer id="264" name="lootOfBodyBagsPair" count="1,4" size="6,3" destroy_on_close="false" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="qualBaseTemplate">
+			<item name="foodRottingFlesh" count="2,20" prob=".2"/>
+			<item name="resourceAnimalFat" count="5,15" prob=".1"/>
+			<item name="resourceBone" count="2,10" prob=".2"/>
+			
+			<item name="oldCash" count="2,10" prob=".25"/>
+			
+			<item group="lootBagCowboy" prob=".05"/>
+			<item group="lootBagGangsterHitman" prob=".05"/>
+			<item group="lootBagHazmatOperator" prob=".05"/>
+			<item group="lootBagSniperHunter" prob=".05"/>
+			<item group="lootBagSoldier" prob=".05"/>
+		</lootcontainer>
+
+		<!-- Pile of Body Bags Loot -->
+		<lootcontainer id="265" name="lootOfBodyBagsPile" count="2,3" size="6,3" destroy_on_close="false" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="qualBaseTemplate">
+			<item name="foodRottingFlesh" count="2,20" prob=".2"/>
+			<item name="resourceAnimalFat" count="5,15" prob=".1"/>
+			<item name="resourceBone" count="2,10" prob=".2"/>
+			
+			<item name="oldCash" count="2,10" prob=".25"/>
+			
+			<item group="lootBagCowboy" prob=".05"/>
+			<item group="lootBagGangsterHitman" prob=".05"/>
+			<item group="lootBagHazmatOperator" prob=".05"/>
+			<item group="lootBagSniperHunter" prob=".05"/>
+			<item group="lootBagSoldier" prob=".05"/>
+		</lootcontainer>
+	</append>
+</configs>

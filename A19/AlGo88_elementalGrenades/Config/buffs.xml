@@ -1,0 +1,58 @@
+<configs>
+	<append xpath="/buffs">
+		
+		<!--<buff name="buffFatKidRadiation" icon="ui_game_symbol_radiation" icon_color="0,180,0">
+			<damage_type value="radiation"/>
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffFatKidRadiationDuration" operation="LTE" value="30"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="set" value="30"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="set" value="30"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,30" value="1,1"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="10,30" value="1,1"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="add" value="-1"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Radiation" intensity=".6" fade="2"/>
+				
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFatKidRadiation">
+					<requirement name="CVarCompare" cvar="$buffFatKidRadiationDuration" operation="LTE" value="0"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFatKidRadiationDuration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Radiation" intensity="0" fade="0"/>
+			</effect_group>
+		</buff>-->
+	
+		<buff name="buffElementalEffectFreeze" icon="ui_game_symbol_cold" icon_color="0,40,80">
+			<!--
+			<damage_type value="cold"/>
+			<stack_type value="replace"/>
+			<duration value="3"/>
+			<passive_effect name="HealthChangeOT" operation="base_add" value="-6"/>
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9,0" duration="3"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9,0" duration="2"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9,0" duration="2"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.9,0" duration="3"/>
+			
+			-->
+			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="forge_fire_die"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="forge_fire_die"/>
+			
+			
+			<effect_group>
+				<requirement name="CVarCompare" cvar="$buffElementalEffectFreezeDuration" operation="LTE" value="30"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffElementalEffectFreezeDuration" operation="set" value="4"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffElementalEffectFreezeDuration" operation="set" value="4"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffElementalEffectFreezeDuration" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Cold" intensity=".8" fade="2"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Cold" intensity="0" fade="0"/>
+			</effect_group>
+			
+		</buff>
+	
+	
+	
+	</append> 
+ </configs>

@@ -1,0 +1,46 @@
+<configs>
+	<append xpath="/items">
+		
+		<item name="thrownElementalPipeFreeze"> <!-- T2 demolitions (perk 1) -->
+			<property name="Extends" value="thrownAmmoPipeBomb"/>		
+			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/PipeBomb/PipeBombPrefab.prefab"/>
+			<property name="CustomIcon" value="thrownAmmoPipeBomb"/><property name="CustomIconTint" value="004080"/>
+			<property name="EconomicValue" value="23"/>
+			<property name="Weight" value="0"/>
+			<property name="Explosion.ParticleIndex" value="12"/>
+			<property name="Explosion.RadiusBlocks" value="1"/>
+			<property name="Explosion.RadiusEntities" value="6"/>
+			<property name="Explosion.BlastPower" value="75"/> <!-- (int,100) how far ragdolls and such are flung -->
+			<property name="FuseTime" value="5"/> <!-- End: Needed for  time in sec, max 6 -->
+			<property class="Action0">
+				<property name="Class" value="ThrowAway"/>
+				<!-- <property name="Hitmask_override" value="Arrow"/> unfortunately this cannot work without a serious rewrite of the hitmask system -->
+				<property name="Delay" value="1.2"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Throw_strength_default" value="8"/>
+				<property name="Throw_strength_max" value="50"/>
+				<property name="Max_strain_time" value="1.25"/>
+				<property name="Sound_start" value="swoosh"/>
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Activate"/>
+				<property name="Delay" value="1"/> <!-- obsolete if rounds per minute exists -->
+			</property>
+			<property name="ThrowableDecoy" value="true"/>
+			<effect_group tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<!-- adding 10% damage because it's impossible to place explosives inside an entity where it would do the exact damage -->
+				<passive_effect name="EntityDamage" operation="base_set" value="50"/><display_value name="dExDamageEntity" value="50"/>
+				<display_value name="dExRadius" value="6"/>
+				<display_value name="dFuseTime" value="5"/>
+			</effect_group>
+
+			<effect_group name="elementalEffect" tiered="false">
+			<triggered_effect trigger="onSelfExplosionAttackedOther" action="AddBuff" target="otherAOE" range="6" buff="buffElementalEffectFreeze"/>
+			<triggered_effect trigger="onSelfExplosionDamagedOther" action="AddBuff" target="otherAOE" range="6" buff="buffElementalEffectFreeze"/>
+			</effect_group>
+			
+		</item>		
+		
+	</append> 
+ </configs>

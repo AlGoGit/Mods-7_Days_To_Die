@@ -1,0 +1,29 @@
+<configs>
+<!-- Add loot on Gun Safe -->	
+	<!-- gun safe -->
+	<remove xpath="/lootcontainers/lootcontainer[@id='7']"></remove>
+	<append xpath="/lootcontainers">	
+		<lootcontainer id="7" name="gunSafe" size="8,9" sound_open="UseActions/open_safe" sound_close="UseActions/close_safe" open_time="1" loot_quality_template="qualPlus1Template">
+			<item group="groupGunSafeSecure"/>
+			<item name="modShockAmmunition" prob="0.07"/>
+		</lootcontainer>
+	</append>
+	
+	<!-- Add loot on Hardened Chest -->
+	<remove xpath="/lootcontainers/lootcontainer[@id='152']"></remove>
+	<append xpath="/lootcontainers">	
+		<lootcontainer id="152" name="hardenedChestT4" count="2,6" size="8,9" sound_open="UseActions/open_safe" sound_close="UseActions/close_safe" open_time="1" loot_quality_template="qualPlus1Template">
+			<item group="groupHardenedChestT4"/>
+			<item name="modShockAmmunition" prob="0.14"/>
+		</lootcontainer>
+	</append>
+	
+	<!-- Add loot on Hardened Chest -->
+	<remove xpath="/lootcontainers/lootcontainer[@id='153']"></remove>
+	<append xpath="/lootcontainers">	
+		<lootcontainer id="153" name="hardenedChestT5" count="6,8" size="8,8" sound_open="UseActions/open_safe" sound_close="UseActions/close_safe" open_time="1" loot_quality_template="qualPlus1Template">
+			<item group="groupHardenedChestT5"/>
+			<item name="modShockAmmunition" prob="0.2"/>
+		</lootcontainer>
+	</append>
+</configs>

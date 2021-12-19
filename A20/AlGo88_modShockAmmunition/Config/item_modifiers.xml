@@ -1,0 +1,27 @@
+<configs>
+	
+	<append xpath="/item_modifiers" >
+		
+		<item_modifier name="modShockAmmunition" installable_tags="gun,shotgun,turretRanged," modifier_tags="fire" type="attachment">
+			<property name="CreativeMode" value="Player"/>
+			
+			<property name="DescriptionKey" value="modShockAmmunitionDesc"/>
+			<property name="CustomIcon" value="modShockAmmunition"/>
+			
+			<property name="Stacknumber" value="1"/>
+			<property name="Group" value="Mods"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			
+			<property name="DamageType" value="Electrical"/>
+			
+			<effect_group name="apply damage buff" tiered="false">
+				<passive_effect name="EntityDamage" operation="base_add" value="3"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,10" operation="LTE" value="2"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" tags="animal,player,zombie" buff="buffShocked"/>
+			</effect_group>
+			
+		</item_modifier>
+	
+	</append>
+</configs>

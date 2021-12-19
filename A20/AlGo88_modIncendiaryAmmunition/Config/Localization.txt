@@ -1,0 +1,5 @@
+Key,Source,Context,Changes,English
+
+modIncendiaryAmmunition,items,Item,KgNone,Incendiary Ammunition Mod,
+
+modIncendiaryAmmunitionDesc,items,weapons,New,Adds a chance to set enemies on fire.,
