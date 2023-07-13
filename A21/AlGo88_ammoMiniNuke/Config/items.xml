@@ -1,0 +1,121 @@
+<configs>
+	<append xpath="/items">
+		<item name="ammoMiniNuke">
+			<property name="Extends" value="ammoRocketHE"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="ammoMiniNuke"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="TraderStageTemplate" value="ammoTier3"/>
+			<property name="EconomicValue" value="20000"/>
+			<property class="Action1">
+				<property name="Explosion.RadiusBlocks" value="40"/> <!-- damage radius for blocks -->
+				<property name="Explosion.RadiusEntities" value="40"/> <!-- damage radius for entities -->
+				<property name="Explosion.DamageBonus.stone" value="9"/>
+				<property name="Explosion.DamageBonus.metal" value="9"/>
+				<property name="Explosion.DamageBonus.earth" value="9"/>
+				<property name="Explosion.DamageBonus.wood" value="9"/>
+				<property name="Explosion.DamageBonus.water" value="9"/>
+				<property name="Explosion.BlockPenetrationFactor" value="3"/>
+				<property name="Explosion.BlockDamage" value="999999"/> <!-- workaround, not affected by perks at all -->
+				<property name="Explosion.EntityDamage" value="10000"/> <!-- workaround, not affected by perks at all -->
+			</property>
+
+			<effect_group name="ammoMiniNuke" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="999999" tags="perkDemolitionsExpert"/>
+				<display_value name="dExDamageBlock" value="999999"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="10000" tags="perkDemolitionsExpert"/>
+				<display_value name="dExDamageEntity" value="10000"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="250" tags="perkDemolitionsExpert"/>
+				<display_value name="dExRadius" value="40"/>
+			<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="50" buff="buffFatKidRadiation"/>
+			<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="60" buff="buffBurningElement"/>
+			</effect_group>
+		</item>
+
+		<item name="gunBigDaddyLauncher">
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,launcher,perkDemolitionsExpert"/>
+			<property name="DisplayType" value="rangedLauncher"/>
+			<property name="EconomicValue" value="100000"/>
+			<property name="HoldType" value="10"/>
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab"/>
+			<property name="Material" value="MRocketLauncherParts"/> 
+			<property name="Weight" value="4"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="weapon_jam"/>
+			<property name="CrosshairOnAim" value="true"/>
+			<property name="CrosshairUpAfterShot" value="true"/>
+			<property name="Sound_Sight_In" value="launcher_sight_in"/>
+			<property name="Sound_Sight_Out" value="launcher_sight_out"/>
+			<property name="Group" value="Ammo/Weapons"/>
+			<property name="RepairExpMultiplier" value="10.8"/>
+			<property name="ShowQuality" value="false"/>
+			<property name="CustomIcon" value="gunExplosivesT3RocketLauncher"/>
+			<property name="CustomIconTint" value="180,200,62"/>
+			<property name="TraderStageTemplate" value="baseTier3"/>
+			<property name="SellableToTrader" value="false"/>
+
+			<property class="Action0">
+				<property name="Class" value="Launcher"/>
+				<property name="Delay" value="0.8"/>
+				<property name="Range" value="300"/>
+				<property name="Magazine_items" value="ammoMiniNuke"/>
+				<property name="Reload_time" value="4"/>
+				<property name="Sound_start" value="m136_fire"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Sound_reload" value="m136_reload"/>
+				<property name="Particles_muzzle_fire" value="rocketLauncherFire"/>
+				<property name="Particles_muzzle_smoke" value="nozzlesmoke_m136"/>
+				<property name="ScopeOffset" value="-.00062,.088,.065"/>
+				<property name="SideOffset" value="0,0,0"/>
+				<property name="BarrelOffset" value="0,0,0"/>
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="55"/>
+				<property name="Zoom_max_in" value="55"/>
+			</property>
+
+			<effect_group name="gunBigDaddyLauncher">
+				<passive_effect name="MaxRange" operation="base_set" value="300" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="70" tags="perkDemolitionsExpert"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15" tags="perkDemolitionsExpert"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDemolitionsExpert"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="75" tags="perkDemolitionsExpert"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".7" tags="perkDemolitionsExpert"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0" tier="0"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="7" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="7" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".15" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="10" tags="perkDemolitionsExpert"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="10" tags="perkDemolitionsExpert"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.5" tags="perkDemolitionsExpert"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".5" tags="perkDemolitionsExpert"/>
+
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="9" tags="perkDemolitionsExpert"/>
+			</effect_group>
+		</item>
+
+	</append> 
+ </configs>

@@ -1,0 +1,10 @@
+Key,Source,Context,Changes,English
+
+ammoMiniNuke,items,Item,KgNone,Fat Kid,
+
+ammoMiniNukeDesc,items,weapons,New,WARNING! Mass destruction ammunition.,
+
+
+gunBigDaddyLauncher,items,Item,KgNone,Big Daddy,
+
+gunBigDaddyLauncherDesc,items,weapons,New,Whose your Daddy?,

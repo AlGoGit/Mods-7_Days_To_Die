@@ -1,0 +1,5 @@
+Key,Source,Context,Changes,English
+
+wetShirt,items,Item,KgNone,Cold Shirt,
+
+wetShirtDesc,items,weapons,New,Will help to unlock achievements.,

@@ -1,0 +1,37 @@
+<configs>
+	<append xpath="/items">
+		<item name="wetShirt">
+			<property name="Extends" value="apparelPlantFiberShirt"/>
+			
+			<property name="Tags" value="upperbody,chest,clothing,pocketMod,canHaveCosmetic"/>
+			<property name="DisplayType" value="clothing"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="Mcloth"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="Weight" value="0"/>
+			<property name="EconomicValue" value="0"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Group" value="Clothing,TCClothing"/>
+			<property name="EquipSlot" value="Chest"/>
+	
+<!--			<property name="Extends" value="apparelPlantFiberShirt"/> -->
+
+			<property name="DescriptionKey" value="wetShirtDesc"/>
+			<property name="CustomIcon" value="wetShirt"/>
+
+			
+			<effect_group tiered="false">
+				<passive_effect name="HypothermalResist" operation="base_add" value="-999"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-999"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNewbieCoat"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffNearDeathProtection"/>
+
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffElementWet">
+					<requirement name="CVarCompare" cvar="_wetness" operation="GT" value="1"/>
+				</triggered_effect>
+
+			</effect_group>
+		</item>
+	</append>
+</configs>

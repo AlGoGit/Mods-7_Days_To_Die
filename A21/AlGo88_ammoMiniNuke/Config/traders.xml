@@ -1,0 +1,6 @@
+<configs>
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='groupRangedAll']">	
+		<item name="ammoMiniNuke" count="1" prob="0.2"/>
+		<item name="gunBigDaddyLauncher" count="1" prob=".1"/>
+	</append>
+</configs>
